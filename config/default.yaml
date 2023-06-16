@@ -16,4 +16,4 @@ jira:
 
 app_insights:
   #instrumentation_key: no default
-  role_name: fact-bsbp-slack-bot
+  role_name: fact-slack-help-bot

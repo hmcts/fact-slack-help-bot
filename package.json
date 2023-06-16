@@ -1,5 +1,5 @@
 {
-  "name": "fact-bsbp-slack-bot",
+  "name": "fact-slack-help-bot",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",

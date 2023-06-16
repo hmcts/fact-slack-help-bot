@@ -1,7 +1,7 @@
 version: "3.8"
 services:
 
-  fact-bsbp-slack-bot:
+  fact-slack-help-bot:
     build: .
     env_file:
       - ./.env
