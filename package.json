@@ -1,0 +1,32 @@
+{
+  "name": "fact-bsbp-slack-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "FACT",
+  "license": "MIT",
+  "dependencies": {
+    "@hmcts/properties-volume": "^0.0.14",
+    "@slack/bolt": "^3.6.0",
+    "@types/config": "3.3.0",
+    "@types/jira-client": "^7.0.0",
+    "applicationinsights": "^2.2.2",
+    "config": "^3.3.6",
+    "jira-client": "^8.1.0",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "29.5.0",
+    "jest-extended": "3.2.4"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ]
+  }
+}
