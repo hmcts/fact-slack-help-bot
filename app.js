@@ -10,10 +10,7 @@ const {
     extractJiraIdFromBlocks,
     transitionHelpRequest
 } = require("./src/service/persistence");
-const appInsights = require('./src/modules/appInsights')
 const { convertProfileToName, replaceAsync } = require('./src/utils/helpers')
-
-appInsights.enableAppInsights()
 
 const app = new App({
     token: config.get('slack.bot_token'), //disable this if enabling OAuth in socketModeReceiver
@@ -38,7 +35,6 @@ const {button} = require("./src/utils/helpers");
 const port = process.env.PORT || 3000
 
 const server = http.createServer((req, res) => {
-    appInsights.client().trackNodeHttpRequest({request: req, response: res});
     if (req.method !== 'GET') {
         res.statusCode = 405;
         res.end("error")
