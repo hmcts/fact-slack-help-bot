@@ -149,9 +149,12 @@ function helpRequestDetails(
     {
         description,
         analysis,
+        caseReferenceNumbers,
+        contactedThirdParty,
         date,
         time
     }) {
+
     return [
         {
             "type": "section",
@@ -167,14 +170,36 @@ function helpRequestDetails(
                 "text": stringTrim(`:thinking_face: Analysis: ${analysis}`, 3000),
             }
         },
+        caseReferenceNumbers !== 'N/A' &&
         {
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": `:calendar: Occured: ${date} at ${time}`,
+                "text": stringTrim(`:receipt: Case Reference Numbers: ${caseReferenceNumbers}`, 3000),
             }
         },
-    ]
+        contactedThirdParty === 'Yes' && {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": ":phone: Has contacted Exela/Xerox for support"
+            }
+        },
+        contactedThirdParty === 'No' && {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": ":phone: Has not contacted Exela/Xerox, please reach out to: \n *Exela (bulk-scan)* \n - David.Eccles@exelaonline.com \n - Richard.Clark@exelaonline.com \n *Xerox (bulk-print)* \n - Chris.Tomlinson@xerox.com \n - ary.francis@xerox.com"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": `:calendar: Occurred: ${date} at ${time}`,
+            }
+        }
+    ].filter(x => typeof x === 'object' && x !== null);
 }
 
 module.exports = {
