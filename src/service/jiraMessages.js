@@ -11,6 +11,8 @@ function mapFieldsToDescription(
         environment,
         description,
         analysis,
+        caseReferenceNumbers,
+        contactedThirdParty,
         date,
         time,
         slackLink
@@ -22,7 +24,7 @@ h6. _This is an automatically generated ticket created from Slack, do not reply 
 
 *Environment affected*: ${environment}
 
-*Occured*: ${date} at ${time}
+*Occurred*: ${date} at ${time}
 
 *Issue description*:
 
@@ -31,6 +33,10 @@ ${description}
 *Analysis done so far*: 
 
 ${analysis}
+
+${caseReferenceNumbers !== "N/A" ? '*Case reference numbers*: ' + caseReferenceNumbers : ''}
+
+${contactedThirdParty !== "N/A" ? '*Contacted Exela/Xerox?*: ' + contactedThirdParty : ''}
 
 `
 }

@@ -26,9 +26,11 @@ function createSupportRequestWorkflowStep() {
                     user,
                     summary: inputs.summary.value,
                     description: inputs.description.value || "N/A",
-                    analysis: inputs.analysis.value || "N/A",
                     environment: inputs.environment.value || "N/A",
                     service: inputs.service.value || "N/A",
+                    analysis: inputs.analysis.value || "N/A",
+                    caseReferenceNumbers: inputs.caseReferenceNumbers.value || "N/A",
+                    contactedThirdParty: inputs.contactedThirdParty.value || "N/A",
                     date: inputs.date.value || "N/A",
                     time: inputs.time.value || "N/A"
                 }
@@ -70,19 +72,6 @@ function workflowStepBlocks(inputs) {
         },
         {
             "type": "input",
-            "block_id": "analysis",
-            "label": {
-                "type": "plain_text",
-                "text": "Analysis"
-            },
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "analysis",
-                "initial_value": inputs?.analysis?.value ?? ""
-            }
-        },
-        {
-            "type": "input",
             "block_id": "environment",
             "label": {
                 "type": "plain_text",
@@ -105,6 +94,45 @@ function workflowStepBlocks(inputs) {
                 "type": "plain_text_input",
                 "action_id": "service",
                 "initial_value": inputs?.service?.value ?? ""
+            }
+        },
+        {
+            "type": "input",
+            "block_id": "analysis",
+            "label": {
+                "type": "plain_text",
+                "text": "Analysis"
+            },
+            "element": {
+                "type": "plain_text_input",
+                "action_id": "analysis",
+                "initial_value": inputs?.analysis?.value ?? ""
+            }
+        },
+        {
+            "type": "input",
+            "block_id": "caseReferenceNumbers",
+            "label": {
+                "type": "plain_text",
+                "text": "Case reference numbers"
+            },
+            "element": {
+                "type": "plain_text_input",
+                "action_id": "caseReferenceNumbers",
+                "initial_value": inputs?.caseReferenceNumbers?.value ?? ""
+            }
+        },
+        {
+            "type": "input",
+            "block_id": "contactedThirdParty",
+            "label": {
+                "type": "plain_text",
+                "text": "Contacted third party"
+            },
+            "element": {
+                "type": "plain_text_input",
+                "action_id": "contactedThirdParty",
+                "initial_value": inputs?.contactedThirdParty?.value ?? ""
             }
         },
         {
@@ -165,6 +193,12 @@ function workflowStepView(values) {
         },
         service: {
             value: values.service.service.value
+        },
+        caseReferenceNumbers: {
+            value: values.caseReferenceNumbers.caseReferenceNumbers.value
+        },
+        contactedThirdParty: {
+            value: values.contactedThirdParty.contactedThirdParty.value
         },
         date: {
             value: values.date.date.value
