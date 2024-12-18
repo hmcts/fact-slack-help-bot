@@ -189,7 +189,7 @@ function helpRequestDetails(
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": ":phone: Has not contacted Exela/Xerox, please reach out to: \n *Exela (bulk-scan)* \n - David.Eccles@exelaonline.com \n - Richard.Clark@exelaonline.com \n *Xerox (bulk-print)* \n - Chris.Tomlinson@xerox.com \n - ary.francis@xerox.com"
+                "text": ":phone: Has not contacted Exela/Xerox, please reach out to: \n *Exela (bulk-scan)* \n - David.Eccles@exelaonline.com \n - Richard.Clark@exelaonline.com \n *Xerox (bulk-print)* \n - Chris.Tomlinson@xerox.com \n - Gary.francis@xerox.com"
             }
         },
         {
